@@ -3,17 +3,17 @@ import "@/sass/buttons.scss";
 
 import { CRow, CCol, CCardBody, CCardText } from "@coreui/react";
 
-import ShadesOfGray from "../ColorName/shadesOfGray";
-import ShadesOfBlue from "../ColorName/shadesOfBlue";
-import ShadesOfCyan from "../ColorName/shadesOfCyan";
-import ShadesOfGreen from "../ColorName/shadesOfGreen";
-import ShadesOfBrown from "../ColorName/shadesOfBrown";
-import ShadesOfPurple from "../ColorName/shadesOfPurple";
-import ShadesOfPink from "../ColorName/shadesOfPink";
-import ShadesOfRed from "../ColorName/shadesOfRed";
-import ShadesOfOrange from "../ColorName/shadesOfOrange";
-import ShadesOfYellow from "../ColorName/shadesOfYellow";
-import ShadesOfLight from "../ColorName/shadesOfLight";
+import ShadesOfGray from "../RgbCode/shadesOfGray";
+import ShadesOfBlue from "../RgbCode/shadesOfBlue";
+import ShadesOfCyan from "../RgbCode/shadesOfCyan";
+import ShadesOfGreen from "../RgbCode/shadesOfGreen";
+import ShadesOfBrown from "../RgbCode/shadesOfBrown";
+import ShadesOfPurple from "../RgbCode/shadesOfPurple";
+import ShadesOfPink from "../RgbCode/shadesOfPink";
+import ShadesOfRed from "../RgbCode/shadesOfRed";
+import ShadesOfOrange from "../RgbCode/shadesOfOrange";
+import ShadesOfYellow from "../RgbCode/shadesOfYellow";
+import ShadesOfLight from "../RgbCode/shadesOfLight";
 
 const Page = () => {
   return (

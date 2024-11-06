@@ -10,21 +10,21 @@ const Page = () => {
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="gold">Gold</span>
+              <span className="gold">rgb(255, 215, 0)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="yellow">Yellow</span>
+              <span className="yellow">rgb(255, 255, 0)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="khaki">Khaki</span>
+              <span className="khaki">rgb(240, 230, 140)</span>
             </button>
           </div>
         </CCol>

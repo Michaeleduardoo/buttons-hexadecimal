@@ -3,49 +3,164 @@ import "@/sass/buttons.scss";
 
 import { CRow, CCol } from "@coreui/react";
 
-const colors = [
-  { name: "slateBlue", code: "#6A5ACD" },
-  { name: "slateBlue1", code: "#836FFF" },
-  { name: "slateBlue3", code: "#6959CD" },
-  { name: "darkSlateBlue", code: "#483D8B" },
-  { name: "midnightBlue", code: "#191970" },
-  { name: "navy", code: "#000080" },
-  { name: "darkBlue", code: "#00008B" },
-  { name: "mediumBlue", code: "#0000CD" },
-  { name: "blue", code: "#0000FF" },
-  { name: "CornflowerBlue", code: "#6495ED" },
-  { name: "royalBlue", code: "#4169E1" },
-  { name: "dodgerBlue", code: "#1E90FF" },
-  { name: "deepSkyBlue", code: "#00BFFF" },
-  { name: "lightSkyBlue", code: "#87CEFA" },
-  { name: "skyBlue", code: "#87CEEB" },
-  { name: "lightBlue", code: "#ADD8E6" },
-  { name: "steelBlue", code: "#4682B4" },
-  { name: "lightSteelBlue", code: "#B0C4DE" },
-  { name: "slateGray", code: "#708090" },
-  { name: "lightSlateGray", code: "#778899" },
-];
-
 const Page = () => {
-  const renderButtons = (startIndex, endIndex) =>
-    colors.slice(startIndex, endIndex).map((color) => (
-      <CCol key={color.name}>
-        <div className="buttons">
-          <button className="btn btn-3 hover-border-2">
-            <span className={color.name}>{color.code}</span>
-          </button>
-        </div>
-      </CCol>
-    ));
-
   return (
     <>
       <CRow xs={{ cols: 5 }} className="primeContainer">
-        {renderButtons(0, 5)}
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2 Black	">
+              <span className="slateBlue">#6A5ACD </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="slateBlue1"> #836FFF </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="slateBlue3"> #6959CD </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="darkSlateBlue"> #483D8B </span>
+            </button>
+          </div>
+        </CCol>
+
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="midnightBlue"> #191970 </span>
+            </button>
+          </div>
+        </CCol>
       </CRow>
-      <CRow xs={{ cols: 5 }}>{renderButtons(5, 10)}</CRow>
-      <CRow xs={{ cols: 5 }}>{renderButtons(10, 15)}</CRow>
-      <CRow xs={{ cols: 5 }}>{renderButtons(15, 20)}</CRow>
+
+      <CRow xs={{ cols: 5 }}>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="navy"> #000080 </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="darkBlue"> #00008B </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="mediumBlue"> #0000CD </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="blue"> #0000FF </span>
+            </button>
+          </div>
+        </CCol>
+
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="CornflowerBlue"> #6495ED </span>
+            </button>
+          </div>
+        </CCol>
+      </CRow>
+
+      <CRow xs={{ cols: 5 }}>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="royalBlue"> #4169E1 </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="dodgerBlue"> #1E90FF </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="deepSkyBlue"> #00BFFF </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="lightSkyBlue"> #87CEFA </span>
+            </button>
+          </div>
+        </CCol>
+
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="skyBlue"> #87CEEB </span>
+            </button>
+          </div>
+        </CCol>
+      </CRow>
+
+      <CRow xs={{ cols: 5 }}>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="lightBlue"> #ADD8E6 </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="steelBlue"> #4682B4 </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="lightSteelBlue"> #B0C4DE </span>
+            </button>
+          </div>
+        </CCol>
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="slateGray"> #708090 </span>
+            </button>
+          </div>
+        </CCol>
+
+        <CCol>
+          <div className="buttons">
+            <button className="btn btn-3 hover-border-2">
+              <span className="lightSlateGray"> #778899 </span>
+            </button>
+          </div>
+        </CCol>
+      </CRow>
     </>
   );
 };

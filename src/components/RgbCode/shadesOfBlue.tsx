@@ -9,29 +9,29 @@ const Page = () => {
       <CRow xs={{ cols: 5 }} className="primeContainer">
         <CCol>
           <div className="buttons">
-            <button className="btn btn-3 hover-border-2 Black	">
-              <span className="slateBlue">SlateBlue </span>
+            <button className="btn btn-3 hover-border-2 Black">
+              <span className="slateBlue">rgb(106, 90, 205)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="slateBlue1"> SlateBlue1 </span>
+              <span className="slateBlue1">rgb(131, 111, 255)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="slateBlue3"> SlateBlue3 </span>
+              <span className="slateBlue3">rgb(105, 89, 205)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="darkSlateBlue"> DarkSlateBlue </span>
+              <span className="darkSlateBlue">rgb(72, 61, 139)</span>
             </button>
           </div>
         </CCol>
@@ -39,7 +39,7 @@ const Page = () => {
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="midnightBlue"> MidnightBlue </span>
+              <span className="midnightBlue">rgb(25, 25, 112)</span>
             </button>
           </div>
         </CCol>
@@ -49,28 +49,28 @@ const Page = () => {
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="navy"> Navy </span>
+              <span className="navy">rgb(0, 0, 128)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="darkBlue"> DarkBlue </span>
+              <span className="darkBlue">rgb(0, 0, 139)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="mediumBlue"> MediumBlue </span>
+              <span className="mediumBlue">rgb(0, 0, 205)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="blue"> Blue </span>
+              <span className="blue">rgb(0, 0, 255)</span>
             </button>
           </div>
         </CCol>
@@ -78,7 +78,7 @@ const Page = () => {
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="CornflowerBlue"> CornflowerBlue </span>
+              <span className="CornflowerBlue">rgb(100, 149, 237)</span>
             </button>
           </div>
         </CCol>
@@ -88,28 +88,28 @@ const Page = () => {
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="royalBlue"> RoyalBlue </span>
+              <span className="royalBlue">rgb(65, 105, 225)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="dodgerBlue"> DodgerBlue </span>
+              <span className="dodgerBlue">rgb(30, 144, 255)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="deepSkyBlue"> DeepSkyBlue </span>
+              <span className="deepSkyBlue">rgb(0, 191, 255)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="lightSkyBlue"> LightSkyBlue </span>
+              <span className="lightSkyBlue">rgb(135, 206, 250)</span>
             </button>
           </div>
         </CCol>
@@ -117,7 +117,7 @@ const Page = () => {
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="skyBlue"> SkyBlue </span>
+              <span className="skyBlue">rgb(135, 206, 235)</span>
             </button>
           </div>
         </CCol>
@@ -127,28 +127,28 @@ const Page = () => {
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="lightBlue"> LightBlue </span>
+              <span className="lightBlue">rgb(173, 216, 230)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="steelBlue"> SteelBlue </span>
+              <span className="steelBlue">rgb(70, 130, 180)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="lightSteelBlue"> LightSteelBlue </span>
+              <span className="lightSteelBlue">rgb(176, 196, 222)</span>
             </button>
           </div>
         </CCol>
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="slateGray"> SlateGray </span>
+              <span className="slateGray">rgb(112, 128, 144)</span>
             </button>
           </div>
         </CCol>
@@ -156,7 +156,7 @@ const Page = () => {
         <CCol>
           <div className="buttons">
             <button className="btn btn-3 hover-border-2">
-              <span className="lightSlateGray"> LightSlateGray </span>
+              <span className="lightSlateGray">rgb(119, 136, 153)</span>
             </button>
           </div>
         </CCol>
