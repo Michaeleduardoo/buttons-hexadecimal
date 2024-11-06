@@ -55,12 +55,6 @@ const Page = () => {
             >
               <CCard className="cashie">
                 <CCardBody>
-                  <CCardBody className="titleCores ">
-                    <CCardText>
-                      This is some text within a HexadecimalCode.
-                    </CCardText>
-                  </CCardBody>
-
                   <HexadecimalCode />
                 </CCardBody>
               </CCard>
@@ -72,10 +66,6 @@ const Page = () => {
             >
               <CCard className="cashie">
                 <CCardBody>
-                  <CCardBody className="titleCores ">
-                    <CCardText>This is some text within a card body.</CCardText>
-                  </CCardBody>
-
                   <RgbCode />
                 </CCardBody>
               </CCard>
