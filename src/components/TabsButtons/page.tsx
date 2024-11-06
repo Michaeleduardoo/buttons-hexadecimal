@@ -1,5 +1,7 @@
 "use client";
 import ColorName from "../ColorName/page";
+import HexadecimalCode from "../HexadecimalCode/page";
+import RgbCode from "../RgbCode/page";
 import {
   CCardText,
   CNavbar,
@@ -54,10 +56,12 @@ const Page = () => {
               <CCard className="cashie">
                 <CCardBody>
                   <CCardBody className="titleCores ">
-                    <CCardText>This is some text within a card body.</CCardText>
+                    <CCardText>
+                      This is some text within a HexadecimalCode.
+                    </CCardText>
                   </CCardBody>
 
-                  <ColorName />
+                  <HexadecimalCode />
                 </CCardBody>
               </CCard>
             </CTabPanel>
@@ -72,7 +76,7 @@ const Page = () => {
                     <CCardText>This is some text within a card body.</CCardText>
                   </CCardBody>
 
-                  <ColorName />
+                  <RgbCode />
                 </CCardBody>
               </CCard>
             </CTabPanel>
