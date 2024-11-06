@@ -2,7 +2,6 @@
 import "@/sass/buttons.scss";
 import { CRow, CCol } from "@coreui/react";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const copyToClipboard = (text) => {
   navigator.clipboard
@@ -23,11 +22,6 @@ const copyToClipboard = (text) => {
 const Page = () => {
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-      />
       <CRow xs={{ cols: 5 }} className="primeContainer">
         <CCol>
           <div className="buttons">
