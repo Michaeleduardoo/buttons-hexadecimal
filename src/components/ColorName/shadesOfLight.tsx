@@ -1,248 +1,100 @@
 "use client";
 import "@/sass/buttons.scss";
-
 import { CRow, CCol } from "@coreui/react";
+import { toast } from "react-toastify";
+
+const copyToClipboard = (text) => {
+  const loadingToast = toast.info("Carregando...", {
+    autoClose: 3000,
+    isLoading: true,
+  });
+
+  setTimeout(() => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        toast.dismiss(loadingToast);
+        toast.success(`${text} Copiado.`, {
+          autoClose: 3000,
+        });
+      })
+      .catch((error) => {
+        toast.dismiss(loadingToast);
+        toast.error("Falha ao copiar para a área de transferência", {
+          autoClose: 3000,
+        });
+        console.error(error);
+      });
+  }, 2000);
+};
+
+const ColorButton = ({ text, colorClass }) => (
+  <CCol>
+    <div className="buttons">
+      <button
+        className="btn btn-3 hover-border-2"
+        onClick={() => copyToClipboard(text)}
+      >
+        <span className={colorClass}>{text}</span>
+      </button>
+    </div>
+  </CCol>
+);
 
 const Page = () => {
+  const colors = [
+    { text: "AliceBlue", colorClass: "aliceBlue" },
+    { text: "GhostWhite", colorClass: "ghostWhite" },
+    { text: "Snow", colorClass: "snow" },
+    { text: "Seashell", colorClass: "seashell" },
+    { text: "FloralWhite", colorClass: "floralWhite" },
+    { text: "WhiteSmoke", colorClass: "whiteSmoke" },
+    { text: "Beige", colorClass: "beige" },
+    { text: "OldLace", colorClass: "oldLace" },
+    { text: "Ivory", colorClass: "ivory" },
+    { text: "Linen", colorClass: "linen" },
+    { text: "Cornsilk", colorClass: "cornsilk" },
+    { text: "AntiqueWhite", colorClass: "antiqueWhite" },
+    { text: "BlanchedAlmond", colorClass: "blanchedAlmond" },
+    { text: "Bisque", colorClass: "bisque" },
+    { text: "LightYellow", colorClass: "lightYellow" },
+    { text: "LemonChiffon", colorClass: "lemonChiffon" },
+    { text: "LightGoldenrodYellow", colorClass: "lightGoldenrodYellow" },
+    { text: "PapayaWhip", colorClass: "papayaWhip" },
+    { text: "PeachPuff", colorClass: "peachPuff" },
+    { text: "Moccasin", colorClass: "moccasin" },
+    { text: "PaleGoldenrod", colorClass: "paleGoldenrod" },
+    { text: "MistyRose", colorClass: "mistyRose" },
+    { text: "LavenderBlush", colorClass: "lavenderBlush" },
+    { text: "Lavender", colorClass: "lavender" },
+    { text: "Thistle", colorClass: "thistle" },
+    { text: "Azure", colorClass: "azure" },
+    { text: "LightCyan", colorClass: "lightCyan" },
+    { text: "PowderBlue", colorClass: "powderBlue" },
+    { text: "PaleTurquoise", colorClass: "paleTurquoise" },
+    { text: "Honeydew", colorClass: "honeydew" },
+    { text: "MintCream", colorClass: "mintCream" },
+    { text: "Dyrup", colorClass: "dyrup" },
+    { text: "White Chocolate", colorClass: "whiteChocolate" },
+    { text: "White", colorClass: "white" },
+    { text: "Transparent", colorClass: "transparent" },
+  ];
+
   return (
     <>
-      <CRow xs={{ cols: 5 }} className="primeContainer">
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="aliceBlue">AliceBlue</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="ghostWhite">GhostWhite</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="snow">Snow</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="seashell">Seashell</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="floralWhite">FloralWhite</span>
-            </button>
-          </div>
-        </CCol>
-      </CRow>
-
-      <CRow xs={{ cols: 5 }}>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="whiteSmoke">WhiteSmoke</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="beige">Beige</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="oldLace">OldLace</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="ivory">Ivory</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="linen">Linen</span>
-            </button>
-          </div>
-        </CCol>
-      </CRow>
-
-      <CRow xs={{ cols: 5 }}>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="cornsilk">Cornsilk</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="antiqueWhite">AntiqueWhite</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="blanchedAlmond">BlanchedAlmond</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="bisque">Bisque</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lightYellow">LightYellow</span>
-            </button>
-          </div>
-        </CCol>
-      </CRow>
-
-      <CRow xs={{ cols: 5 }}>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lemonChiffon">LemonChiffon</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lightGoldenrodYellow">LightGoldenrodYellow</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="papayaWhip">PapayaWhip</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="peachPuff">PeachPuff</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="moccasin">Moccasin</span>
-            </button>
-          </div>
-        </CCol>
-      </CRow>
-
-      <CRow xs={{ cols: 5 }}>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="paleGoldenrod">PaleGoldenrod</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="mistyRose">MistyRose</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lavenderBlush">LavenderBlush</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lavender">Lavender</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="thistle">Thistle</span>
-            </button>
-          </div>
-        </CCol>
-      </CRow>
-
-      <CRow xs={{ cols: 5 }}>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="azure">Azure</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lightCyan">LightCyan</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="powderBlue">PowderBlue</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="paleTurquoise">PaleTurquoise</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="honeydew">Honeydew</span>
-            </button>
-          </div>
-        </CCol>
-      </CRow>
-
-      <CRow xs={{ cols: 5 }}>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="mintCream">MintCream</span>
-            </button>
-          </div>
-        </CCol>
-      </CRow>
+      {Array.from({ length: Math.ceil(colors.length / 5) }).map(
+        (_, rowIndex) => (
+          <CRow xs={{ cols: 5 }} className="primeContainer" key={rowIndex}>
+            {colors.slice(rowIndex * 5, rowIndex * 5 + 5).map((color) => (
+              <ColorButton
+                key={color.text}
+                text={color.text}
+                colorClass={color.colorClass}
+              />
+            ))}
+          </CRow>
+        )
+      )}
     </>
   );
 };
