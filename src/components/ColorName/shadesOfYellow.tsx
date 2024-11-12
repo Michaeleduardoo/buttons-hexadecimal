@@ -29,43 +29,38 @@ const copyToClipboard = (text) => {
       });
   }, 2000);
 };
+const CopyButton = ({ text, colorClass }) => (
+  <CCol>
+    <div className="buttons">
+      <button
+        className="btn btn-3 hover-border-2"
+        onClick={() => copyToClipboard(text)}
+      >
+        <span className={colorClass}>{text}</span>
+      </button>
+    </div>
+  </CCol>
+);
 
 const Page = () => {
+  const colors = [
+    { text: "Gold", colorClass: "gold" },
+    { text: "Yellow", colorClass: "yellow" },
+    { text: "Khaki", colorClass: "khaki" },
+    { text: "Burnt Yellow", colorClass: "burntYellow" },
+    { text: "Pantone", colorClass: "pantone" },
+  ];
+
   return (
-    <>
-      <CRow xs={{ cols: 5 }} className="primeContainer">
-        <CCol>
-          <div className="buttons">
-            <button
-              className="btn btn-3 hover-border-2"
-              onClick={() => copyToClipboard("Gold")}
-            >
-              <span className="gold">Gold</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button
-              className="btn btn-3 hover-border-2"
-              onClick={() => copyToClipboard("Yellow")}
-            >
-              <span className="yellow">Yellow</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button
-              className="btn btn-3 hover-border-2"
-              onClick={() => copyToClipboard("Khaki")}
-            >
-              <span className="khaki">Khaki</span>
-            </button>
-          </div>
-        </CCol>
-      </CRow>
-    </>
+    <CRow xs={{ cols: 5 }} className="primeContainer">
+      {colors.map((color) => (
+        <CopyButton
+          key={color.text}
+          text={color.text}
+          colorClass={color.colorClass}
+        />
+      ))}
+    </CRow>
   );
 };
 
