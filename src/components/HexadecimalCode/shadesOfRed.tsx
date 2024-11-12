@@ -1,85 +1,83 @@
 "use client";
 import "@/sass/buttons.scss";
-
 import { CRow, CCol } from "@coreui/react";
+import { toast } from "react-toastify";
+
+const copyToClipboard = (text) => {
+  const loadingToast = toast.info("Carregando...", {
+    autoClose: 3000,
+    isLoading: true,
+  });
+
+  setTimeout(() => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        toast.dismiss(loadingToast);
+        toast.success(`${text} Copiado.`, {
+          autoClose: 3000,
+        });
+      })
+      .catch((error) => {
+        toast.dismiss(loadingToast);
+        toast.error("Falha ao copiar para a área de transferência", {
+          autoClose: 3000,
+        });
+        console.error(error);
+      });
+  }, 2000);
+};
+
+const CopyButton = ({ text, colorClass }) => (
+  <CCol>
+    <div className="buttons">
+      <button
+        className="btn btn-3 hover-border-2"
+        onClick={() => copyToClipboard(text)}
+      >
+        <span className={colorClass}>{text}</span>
+      </button>
+    </div>
+  </CCol>
+);
 
 const Page = () => {
+  const colors1 = [
+    { text: "#800000", colorClass: "maroon" },
+    { text: "#8B0000", colorClass: "darkRed" },
+    { text: "#B22222", colorClass: "fireBrick" },
+    { text: "#A52A2A", colorClass: "brown" },
+    { text: "#FA8072", colorClass: "salmon" },
+  ];
+
+  const colors2 = [
+    { text: "#E9967A", colorClass: "darkSalmon" },
+    { text: "#FFA07A", colorClass: "lightSalmon" },
+    { text: "#FF7F50", colorClass: "coral" },
+    { text: "#FF6347", colorClass: "tomato" },
+    { text: "#FF0000", colorClass: "red" },
+  ];
+
   return (
     <>
       <CRow xs={{ cols: 5 }} className="primeContainer">
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="maroon">#800000</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="darkRed">#8B0000</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="fireBrick">#B22222</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="brown">#A52A2A</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="salmon">#FA8072</span>
-            </button>
-          </div>
-        </CCol>
+        {colors1.map((color) => (
+          <CopyButton
+            key={color.text}
+            text={color.text}
+            colorClass={color.colorClass}
+          />
+        ))}
       </CRow>
 
-      <CRow xs={{ cols: 5 }}>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="darkSalmon">#E9967A</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lightSalmon">#FFA07A</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="coral">#FF7F50</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="tomato"> #FF6347</span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="red"> #FF0000</span>
-            </button>
-          </div>
-        </CCol>
+      <CRow xs={{ cols: 5 }} className="primeContainer">
+        {colors2.map((color) => (
+          <CopyButton
+            key={color.text}
+            text={color.text}
+            colorClass={color.colorClass}
+          />
+        ))}
       </CRow>
     </>
   );
