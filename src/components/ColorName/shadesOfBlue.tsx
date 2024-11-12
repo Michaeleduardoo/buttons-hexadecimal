@@ -1,165 +1,120 @@
 "use client";
 import "@/sass/buttons.scss";
-
 import { CRow, CCol } from "@coreui/react";
+import { toast } from "react-toastify";
+
+const copyToClipboard = (text) => {
+  const loadingToast = toast.info("Carregando...", {
+    autoClose: 3000,
+    isLoading: true,
+  });
+
+  setTimeout(() => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        toast.dismiss(loadingToast);
+
+        toast.success(`${text} Copiado.`, {
+          autoClose: 3000,
+        });
+      })
+      .catch((error) => {
+        toast.dismiss(loadingToast);
+
+        toast.error("Falha ao copiar para a área de transferência", {
+          autoClose: 3000,
+        });
+        console.error(error);
+      });
+  }, 2000);
+};
+const CopyButton = ({ text, colorClass }) => (
+  <CCol>
+    <div className="buttons">
+      <button
+        className="btn btn-3 hover-border-2"
+        onClick={() => copyToClipboard(text)}
+      >
+        <span className={colorClass}>{text}</span>
+      </button>
+    </div>
+  </CCol>
+);
 
 const Page = () => {
+  const colors1 = [
+    { text: "SlateBlue", colorClass: "slateBlue" },
+    { text: "SlateBlue1", colorClass: "slateBlue1" },
+    { text: "SlateBlue3", colorClass: "slateBlue3" },
+    { text: "DarkSlateBlue", colorClass: "darkSlateBlue" },
+    { text: "MidnightBlue", colorClass: "midnightBlue" },
+  ];
+
+  const colors2 = [
+    { text: "Navy", colorClass: "navy" },
+    { text: "DarkBlue", colorClass: "darkBlue" },
+    { text: "MediumBlue", colorClass: "mediumBlue" },
+    { text: "Blue", colorClass: "blue" },
+    { text: "CornflowerBlue", colorClass: "cornflowerBlue" },
+  ];
+
+  const colors3 = [
+    { text: "RoyalBlue", colorClass: "royalBlue" },
+    { text: "DodgerBlue", colorClass: "dodgerBlue" },
+    { text: "DeepSkyBlue", colorClass: "deepSkyBlue" },
+    { text: "LightSkyBlue", colorClass: "lightSkyBlue" },
+    { text: "SkyBlue", colorClass: "skyBlue" },
+  ];
+
+  const colors4 = [
+    { text: "LightBlue", colorClass: "lightBlue" },
+    { text: "SteelBlue", colorClass: "steelBlue" },
+    { text: "LightSteelBlue", colorClass: "lightSteelBlue" },
+    { text: "SlateGray", colorClass: "slateGray" },
+    { text: "LightSlateGray", colorClass: "lightSlateGray" },
+  ];
+
   return (
     <>
       <CRow xs={{ cols: 5 }} className="primeContainer">
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2 Black	">
-              <span className="slateBlue">SlateBlue </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="slateBlue1"> SlateBlue1 </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="slateBlue3"> SlateBlue3 </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="darkSlateBlue"> DarkSlateBlue </span>
-            </button>
-          </div>
-        </CCol>
-
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="midnightBlue"> MidnightBlue </span>
-            </button>
-          </div>
-        </CCol>
+        {colors1.map((color) => (
+          <CopyButton
+            key={color.text}
+            text={color.text}
+            colorClass={color.colorClass}
+          />
+        ))}
       </CRow>
 
-      <CRow xs={{ cols: 5 }}>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="navy"> Navy </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="darkBlue"> DarkBlue </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="mediumBlue"> MediumBlue </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="blue"> Blue </span>
-            </button>
-          </div>
-        </CCol>
-
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="CornflowerBlue"> CornflowerBlue </span>
-            </button>
-          </div>
-        </CCol>
+      <CRow xs={{ cols: 5 }} className="primeContainer">
+        {colors2.map((color) => (
+          <CopyButton
+            key={color.text}
+            text={color.text}
+            colorClass={color.colorClass}
+          />
+        ))}
       </CRow>
 
-      <CRow xs={{ cols: 5 }}>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="royalBlue"> RoyalBlue </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="dodgerBlue"> DodgerBlue </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="deepSkyBlue"> DeepSkyBlue </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lightSkyBlue"> LightSkyBlue </span>
-            </button>
-          </div>
-        </CCol>
-
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="skyBlue"> SkyBlue </span>
-            </button>
-          </div>
-        </CCol>
+      <CRow xs={{ cols: 5 }} className="primeContainer">
+        {colors3.map((color) => (
+          <CopyButton
+            key={color.text}
+            text={color.text}
+            colorClass={color.colorClass}
+          />
+        ))}
       </CRow>
 
-      <CRow xs={{ cols: 5 }}>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lightBlue"> LightBlue </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="steelBlue"> SteelBlue </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lightSteelBlue"> LightSteelBlue </span>
-            </button>
-          </div>
-        </CCol>
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="slateGray"> SlateGray </span>
-            </button>
-          </div>
-        </CCol>
-
-        <CCol>
-          <div className="buttons">
-            <button className="btn btn-3 hover-border-2">
-              <span className="lightSlateGray"> LightSlateGray </span>
-            </button>
-          </div>
-        </CCol>
+      <CRow xs={{ cols: 5 }} className="primeContainer">
+        {colors4.map((color) => (
+          <CopyButton
+            key={color.text}
+            text={color.text}
+            colorClass={color.colorClass}
+          />
+        ))}
       </CRow>
     </>
   );
