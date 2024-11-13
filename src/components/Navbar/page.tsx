@@ -21,11 +21,11 @@ const Page = () => {
             />
           </CNavbarBrand>
           <CNavbarBrand
-            href="https://www.linkedin.com/in/michael-eduardo/"
+            href="https://coreui.io/react/"
             target="_blank"
-            className="textNav"
+            className=""
           >
-            @MichaelEduardo
+            CoreUI &copy;2024
           </CNavbarBrand>
         </CContainer>
       </CNavbar>

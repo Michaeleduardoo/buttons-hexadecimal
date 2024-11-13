@@ -7,12 +7,17 @@ const Page = () => {
     <>
       <CFooter>
         <div>
-          <CLink href="https://coreui.io">CoreUI</CLink>
-          <span>&copy; 2024 creativeLabs.</span>
+          <span>Linkedin: </span>
+          <CLink
+            href="https://www.linkedin.com/in/michael-eduardo/"
+            target="_blank"
+          >
+            @MichaelEduardo
+          </CLink>
         </div>
         <div>
-          <span>Powered by</span>
-          <CLink href="https://coreui.io">CoreUI</CLink>
+          <CLink href="https://coreui.io/react/">CoreUI </CLink>
+          <span>&copy; 2024 </span>
         </div>
       </CFooter>
     </>
