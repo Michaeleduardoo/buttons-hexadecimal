@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <div className="cardTitle">
       <CHeader className="cardHeader">
-        <CHeaderBrand href="#">Buttons de Cores hexadecimal</CHeaderBrand>
+        <CHeaderBrand href="#">Buttons de Cores</CHeaderBrand>
       </CHeader>
       <CCard>
         <CCardBody>Tabela de Cores HTML (nome, hexadecimal e RGB)</CCardBody>
