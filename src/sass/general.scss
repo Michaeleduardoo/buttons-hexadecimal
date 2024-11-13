@@ -10,3 +10,11 @@ body {
   height: 100vh;
   padding: 0 !important;
 }
+
+.footer {
+  justify-content: center !important;
+  .linkFooter {
+    color: #282a2b;
+    font-weight: 600;
+  }
+}

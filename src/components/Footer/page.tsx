@@ -5,19 +5,15 @@ import { CFooter, CLink } from "@coreui/react";
 const Page = () => {
   return (
     <>
-      <CFooter>
+      <CFooter className="footer">
         <div>
-          <span>Linkedin: </span>
           <CLink
             href="https://www.linkedin.com/in/michael-eduardo/"
             target="_blank"
+            className="linkFooter"
           >
-            @MichaelEduardo
+            Michael Eduardo Pereira
           </CLink>
-        </div>
-        <div>
-          <CLink href="https://coreui.io/react/">CoreUI </CLink>
-          <span>&copy; 2024 </span>
         </div>
       </CFooter>
     </>
