@@ -18,3 +18,27 @@ body {
     font-weight: 600;
   }
 }
+
+@media (max-width: 900px) {
+  .primeContainer {
+    display: contents !important;
+  }
+
+  .row-cols-5 > * {
+    width: 100% !important;
+  }
+
+  .ContCores .buttons .btn span {
+    font-size: 10px !important;
+  }
+
+  .card-text:last-child {
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-text:last-child {
+    font-size: 10px;
+  }
+}
