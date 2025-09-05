@@ -1,4 +1,4 @@
-# 🎨 Buttons Hexadecimal - Professional Color Palette Tool
+# 🎨 Buttons Hexadecimal 
 
 <div>
 
